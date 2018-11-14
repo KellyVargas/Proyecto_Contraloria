@@ -27,4 +27,59 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    //Custom variable
+
+
+    /**
+     *Fields that go inside the form
+     *
+     * @var array
+     */
+    protected $fieldsForm = [
+        [
+            'name' => 'name',
+            'type' => 'text',
+        ],
+        [
+            'name' => 'email',
+            'type' => 'text',
+        ],
+    ];
+
+
+    /**
+     * Fields that go inside the table
+     *
+     * @var array
+     */
+    public $ColumnsTable = [
+        'name', 'email'
+    ];
+
+    /**
+     * Get the Fields that go inside the form
+     *
+     * @return array
+     */
+    public function getColumnsTable(): array
+    {
+        return $this->ColumnsTable;
+    }
+
+    /**
+     * Get the Fields that go inside the table
+     *
+     * @return array
+     */
+
+    public function getFieldsForm(): array
+    {
+        return $this->fieldsForm;
+    }
+
+    /**
+     * @return array
+     */
+
 }

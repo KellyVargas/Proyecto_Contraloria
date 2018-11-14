@@ -4,8 +4,13 @@
 
 @section('table')
     @component('components.table', [
-    'fields' => ['name', 'email'],
-    'entities' => $data['entities'],
+        'fields' => $data['table'],
+        'entities' => $data['entities'],
     ])@endcomponent
 @endsection
 
+@section('form')
+    @component('components.form', [
+        'fields' => $data['form'],
+    ])@endcomponent
+@endsection
