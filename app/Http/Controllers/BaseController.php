@@ -30,14 +30,18 @@ class BaseController extends Controller
         $this->middleware('permission:' . $this->crud->getTable() . '.store')->only(['store', 'storeBase']);
         $this->middleware('permission:' . $this->crud->getTable() . '.update')->only(['update', 'updateBase']);*/
     }
+
     /**
      * Display a listing of the resource.
      *
+     * @param array $data
      * @return \Illuminate\Http\Response
      */
-    protected function index()
+    protected function index(array $data = [])
     {
-        return view('app.' . $this->crud);
+        $data['crud'] = $this->crud;
+        $data['entities'] = $this->ajax ? [] : $this->table->get()->sortBy('name');
+        return $view = view('app.' . $this->crud)->with('data', $data);
     }
 
     /**
