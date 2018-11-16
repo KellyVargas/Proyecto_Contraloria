@@ -2,6 +2,12 @@
 
 @section('title', __('app.titles.' . $data['crud']))
 
+@section('tools')
+    @component('components.tools', [
+        'create' => false,
+    ])@endcomponent
+@endsection
+
 @section('table')
     @component('components.table', [
         'fields' => $data['table'],

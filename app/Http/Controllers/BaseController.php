@@ -53,7 +53,7 @@ class BaseController extends Controller
      */
     protected function storeBase(Request $request)
     {
-        //
+        return response()->json($this->entity->create($request->all()));
     }
 
     /**

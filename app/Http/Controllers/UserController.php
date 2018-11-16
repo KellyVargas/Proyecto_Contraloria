@@ -20,11 +20,12 @@ class UserController extends BaseController
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        return parent::storeBase($request);
     }
 
     /**

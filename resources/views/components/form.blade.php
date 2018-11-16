@@ -9,10 +9,10 @@
 </div>
 
 <div class="card-footer">
-    {{ Form::button(__('base.buttons.create'),[
+    {{ Form::button(__('base.buttons.store'),[
         'id' => 'formButton',
         'class' => 'btn btn-primary',
-        'data-action' => 'create'
+        'data-action' => 'store'
     ]) }}
     {{ Form::button(__('base.buttons.cancel'), [
         'id' => 'formReset',
